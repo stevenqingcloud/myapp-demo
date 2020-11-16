@@ -875,6 +875,7 @@
                                     <npmVersion>${npm.version}</npmVersion>
                                     <nodeDownloadRoot>https://cdn.npm.taobao.org/dist/</nodeDownloadRoot>
                                     <npmDownloadRoot>https://cdn.npm.taobao.org/npm/-/</npmDownloadRoot>
+                                    <downloadRoot>http://npm.taobao.org/mirrors/node/</downloadRoot>
                                 </configuration>
                             </execution>
                             <execution>
