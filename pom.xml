@@ -873,6 +873,8 @@
                                 <configuration>
                                     <nodeVersion>${node.version}</nodeVersion>
                                     <npmVersion>${npm.version}</npmVersion>
+                                    <nodeDownloadRoot>https://cdn.npm.taobao.org/dist/</nodeDownloadRoot>
+                                    <npmDownloadRoot>https://cdn.npm.taobao.org/npm/-/</npmDownloadRoot>
                                 </configuration>
                             </execution>
                             <execution>
