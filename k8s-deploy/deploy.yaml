@@ -10,11 +10,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-mysql-devops-env
+      app: myapp-demo
   template:
     metadata:
       labels:
-        app: demo-mysql-devops-env
+        app: myapp-demo
     spec:
       containers:
         - image: 359067638/myapp-demo:SNAPSHOT-$BUILD_NUMBER
