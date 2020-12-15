@@ -2,17 +2,16 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    component: myapp-demo
-  name: myapp-demo
-  namespace: test-zxs
+    component: $APP_NAME
+  name: $APP_NAME
+  namespace: $NAMESPACE
 spec:
   ports:
     - name: http
-      port: 8080
+      port: $APP_PORT
       protocol: TCP
-      targetPort: 8080
-      nodePort: 30863
+      targetPort: $APP_PORT
   selector:
-    app: myapp-demo
+    app: $APP_NAME
   sessionAffinity: None
   type: NodePort
