@@ -4,7 +4,7 @@ metadata:
   labels:
     app: myapp-demo
   name: myapp-demo
-  namespace: test-zxs
+  namespace: $NAMESPACE
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
