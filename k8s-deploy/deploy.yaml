@@ -2,24 +2,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: myapp-demo
-  name: myapp-demo
+    app: $APP_NAME
+  name: $APP_NAME
   namespace: $NAMESPACE
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   selector:
     matchLabels:
-      app: myapp-demo
+      app: $APP_NAME
   template:
     metadata:
       labels:
-        app: myapp-demo
+        app: $APP_NAME
     spec:
       containers:
-        - image: 359067638/myapp-demo:SNAPSHOT-$BUILD_NUMBER
+        - image: $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
           imagePullPolicy: Always
-          name: myapp-demo
+          name: $APP_NAME
           env:
             - name: MYSQL_HOST
               value: $MYSQL_HOST
