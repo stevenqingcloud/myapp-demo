@@ -11,6 +11,22 @@
     <link rel="icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.webapp" />
     <link rel="stylesheet" href="content/css/loading.css">
+      <script src="/api/ta"></script>
+    <script>
+        var _taConfig = window._taConfig;
+        if (_taConfig && _taConfig.enabled) {
+            !function (e, n, r, t, a, o, c) {
+                e[a] = e[a] || function () {
+                    (e[a].q = e[a].q || []).push(arguments)
+                }, e.onerror = function (n, r, t, o, c) {
+                    e[a]("sendExecError", n, r, t, o, c)
+                }, n.addEventListener("error", function (n) {
+                    e[a]("sendError", n)
+                }, !0), o = n.createElement(r), c = n.getElementsByTagName(r)[0], o.async = 1, o.src = t, c.parentNode.insertBefore(o, c)
+            }(window, document, "script", _taConfig.url, "$ta");
+            $ta('start', {udata: {uid: 0}, ak: _taConfig.ak, url: _taConfig.collectorUrl});
+        }
+    </script>
     <!-- jhipster-needle-add-resources-to-root - JHipster will add new resources here -->
 </head>
 <body>

@@ -32,7 +32,7 @@ spec:
             - name: MYSQL_DATABASE
               value: $MYSQL_DATABASE    
           ports:
-            - containerPort: 8080
+            - containerPort: $APP_PORT 
               protocol: TCP
           resources:
             limits:
