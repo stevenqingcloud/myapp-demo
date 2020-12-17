@@ -2,24 +2,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: $APP_NAME
-  name: $APP_NAME
-  namespace: $NAMESPACE
+    app: myapp-demo
+  name: myapp-demo
+  namespace: myapp-rbh
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   selector:
     matchLabels:
-      app: $APP_NAME
+      app: myapp-demo
   template:
     metadata:
       labels:
-        app: $APP_NAME
+        app: myapp-demo
     spec:
       containers:
-        - image: $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
+        - image: docker.io/zq975684/myapp-demo:SNAPSHOT-$BUILD_NUMBER
           imagePullPolicy: Always
-          name: $APP_NAME
+          name: myapp-demo
           env:
             - name: MYSQL_HOST
               value: $MYSQL_HOST
@@ -32,7 +32,7 @@ spec:
             - name: MYSQL_DATABASE
               value: $MYSQL_DATABASE    
           ports:
-            - containerPort: $APP_PORT 
+            - containerPort: 8080 
               protocol: TCP
           resources:
             limits:
