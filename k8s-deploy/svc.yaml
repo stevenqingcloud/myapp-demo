@@ -2,16 +2,16 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    component: $APP_NAME
-  name: $APP_NAME
-  namespace: $NAMESPACE
+    component: myapp-demo
+  name: myapp-demo
+  namespace: myapp-rbh
 spec:
   ports:
     - name: http
-      port: $APP_PORT
+      port: 8080
       protocol: TCP
-      targetPort: $APP_PORT
+      targetPort: 8080
   selector:
-    app: $APP_NAME
+    app: myapp-demo
   sessionAffinity: None
   type: NodePort
